@@ -1,0 +1,17 @@
+services:
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: study_wordpress
+    ports:
+      - 80:80
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
